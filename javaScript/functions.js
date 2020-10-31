@@ -1,6 +1,6 @@
 function show_categories(categories){
 
-    var elements = document.getElementsByClassName('box_products');
+    let elements = document.getElementsByClassName('box_products');
     console.log(elements);
     for(var i=0; i<elements.length; i++){
         console.log(elements[i].id);
@@ -11,8 +11,6 @@ function show_categories(categories){
     }
 }
 
-
-
     let show_allCategories = () => {
         let elements = document.getElementsByClassName('box_products');
 
@@ -22,6 +20,7 @@ function show_categories(categories){
 
     };
 
+
     let when_zoom = (image) => {
         console.log(image)
         if(image.width == 364)
@@ -30,14 +29,10 @@ function show_categories(categories){
           image.width = 364;
     }
 
-
-    let go_to_products = () => {
-
-        window.location.href = "../products.html";
-        let cat = show_categories(categories)
-        return cat('heavMetal')
+    function spotlight(li){
+        li.style = "font-size:20px";
     }
 
-// elements[i].style = "display:none"; }
-// else
-//     {elements[i].else = "display:inline-block";}
+    function defocus(li){
+        li.style = "font-size:16px";
+    }

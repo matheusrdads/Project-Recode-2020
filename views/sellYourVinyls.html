@@ -8,15 +8,15 @@
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <!--Start Menu-->
     <nav class="menu">
-        <a href="../index.html"><img width="100px" src="../assets/images.jfif" alt="Full Stack Music"></a>
-        <a href="../products.html"> Products </a>
-        <a href="../stores.html"> Stores </a>
-        <a href="../contact.html"> Contact </a>
-         <input class="search" placeholder="type your search"></input> <a><img src="../assets/search-icon.png" alt="search"></img></a>
+        <ul>
+            <li><a id="logo" href="../index.html"><img src="../assets/images.jfif" alt="Full Stack Music"></a></li>
+            <li><a href="../products.html">Products</a></li>
+            <li><a href="../stores.html">Stores</a></li>
+            <li> <a href="../contact.html">Contact</a></li>
+            <div class="search"><input  placeholder="type your search"></input> <a><img src="../assets/search-icon.png" alt="search"></a></div>
+        </ul>
     </nav>
-    <!--End of menu-->
     <header>
         <h3>Products</h3>
     </header>
@@ -26,17 +26,19 @@
     <div class="categories">
         <h3>Categories</h3>
         <ul>
-            <a href="heavMetal.html" alt="heavMetal"><li>Heavy Metal (234)</li></a>
-            <a href="blackMetal.html" alt="blackMetal"><li>Black Metal (66)</li></a>
-            <a href="trashMetal.html" alt="trashMetal"><li>Thrash metal (75)</li></a>
-            <a href="progressiveRock.html" alt="progressiveRock"><li>Progressive rock (14)</li></a>
-            <a href="folkMetal.html" alt="folkMetal"><li>Folk metal (8)</li></a>
-            <a href="releases.html" alt="releases"><li>Releases</li></a>
-            <a href="promotions.html" alt="promotions"><li>Promotions</li></a>
-            <a href="rareRecords.html" alt="rareRecords"><li>Rare Records</li></a>
-            <a href="bestSellers.html" alt="bestSellers"><li>Best Sellers</li></a>
-            <a href="sellYourVinyls.html" alt="sellYourVinyls"><li>Sell your vinyls</li></a>
-            <a href="used.html" alt="used"><li>Used</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_allCategories()">All(12)</li>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('heavMetal')">Heavy Metal(3)</li>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('blackMetal')">Black Metal(1)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('trashMetal')">Thrash Metal(4)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('progressiveRock')">Progressive Rock(1)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('folkMetal')">Folk Metal (1)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('hardRock')">Hard Rock (2)</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="releases.html" alt="releases"></a><li>Releases</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="promotions.html" alt="promotions"><li>Promotions</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="rareRecords.html" alt="rareRecords"><li>Rare Records</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="bestSellers.html" alt="bestSellers"><li>Best Sellers</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="sellYourVinyls.html" alt="sellYourVinyls"><li>Sell your vinyls</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="used.html" alt="used"><li>Used</li></a>
         <ul>
     </div>
 

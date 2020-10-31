@@ -1,15 +1,57 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "recodepro";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+// $sql = "SELECT * FROM products";
+// $result = $conn->query($sql);
+
+// if ($result->num_rows > 0){
+//     while($row = $result->fetch_assoc()) {
+//         echo $row["categories"];
+//     }
+// }else{
+//     echo "Nenhum produto cadastrado!";
+// }
+
+
+
+
+
+// $sql = "SELECT idorders, fullname, productname  FROM orders";
+// $result = $conn->query($sql);
+
+// if ($result->num_rows > 0) {
+//   // output data of each row
+//   while($row = $result->fetch_assoc()) {
+//     echo "id: " . $row["idorders"]. " - Name: " . $row["fullname"]. " - Produtos: " . $row["productname"]. "<br>";
+//   }
+// } else {
+//   echo "0 results";
+// }
+// $conn->close();
+
+    ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Full Stack Music</title>
-
     <link rel="stylesheet" href="css/style.css">
     <script src="javaScript/functions.js"></script>
 </head>
 <body>
-<nav class="menu">
+<!-- <nav class="menu">
     <ul>
         <li><a id="logo" href="./index.html"><img src="./assets/images.jfif" alt="Full Stack Music"></a></li>
         <li><a href="products.html">Products</a>
@@ -32,7 +74,11 @@
         <li> <a href="contact.html">Contact</a></li>
         <div class="search"><input  placeholder="type your search"></input> <a><img src="./assets/search-icon.png" alt="search"></a></div>
     </ul>
-</nav>
+</nav> -->
+
+    <?php 
+        include_once('menu.html');
+    ?>
 
     <header>
         <h3>Products</h3>
@@ -43,34 +89,53 @@
     <div class="categories">
         <h3>Categories</h3>
         <ul>
-            <li onclick="show_allCategories()">All(12)</li>
-            <li onclick="show_categories('heavMetal')">Heavy Metal(3)</li>
-            <li onclick="show_categories('blackMetal')">Black Metal(1)</li></a>
-            <li onclick="show_categories('trashMetal')">Thrash Metal(4)</li></a>
-            <li onclick="show_categories('progressiveRock')">Progressive Rock(1)</li></a>
-            <li onclick="show_categories('folkMetal')">Folk Metal (1)</li></a>
-            <li onclick="show_categories('hardRock')">Hard Rock (2)</li></a>
-            <a href="views/releases.html" alt="releases"></a><li>Releases</li></a>
-            <a href="views/promotions.html" alt="promotions"><li>Promotions</li></a>
-            <a href="views/rareRecords.html" alt="rareRecords"><li>Rare Records</li></a>
-            <a href="views/bestSellers.html" alt="bestSellers"><li>Best Sellers</li></a>
-            <a href="views/sellYourVinyls.html" alt="sellYourVinyls"><li>Sell your vinyls</li></a>
-            <a href="views/used.html" alt="used"><li>Used</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_allCategories()">All(12)</li>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('heavyMetal')">Heavy Metal(3)</li>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('blackMetal')">Black Metal(1)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('trashMetal')">Thrash Metal(4)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('progressiveRock')">Progressive Rock(1)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('folkMetal')">Folk Metal (1)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('hardRock')">Hard Rock (2)</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/releases.html" alt="releases"></a><li>Releases</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/promotions.html" alt="promotions"><li>Promotions</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/rareRecords.html" alt="rareRecords"><li>Rare Records</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/bestSellers.html" alt="bestSellers"><li>Best Sellers</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/sellYourVinyls.html" alt="sellYourVinyls"><li>Sell your vinyls</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/used.html" alt="used"><li>Used</li></a>
         <ul>
     </div>
 
     <div class="products">
         
-                    <div class="box_products" id="trashMetal">
-                    <img src="./assets/destuction.jpg" width="182px" onclick="when_zoom(this)" >
+                <?php 
+                $sql = "SELECT * FROM products";
+                $result = $conn->query($sql);
+                
+                if ($result->num_rows > 0){
+                    while($row = $result->fetch_assoc()) {
+                        
+                ?>
+
+                    <div class="box_products" id="<?php echo $row["categories"]; ?>">
+                    <img src="<?php echo $row["images"]; ?>" width="182px" onclick="when_zoom(this)">
                         <br>
-                        <p>Destruction - Born To Thrash - Live</p>
+                        <p><?php echo $row["descripton"]; ?></p>
                         <hr>
-                        <p class="old_price"> $ 10.00</p>
-                        <p class="price">6.99</p>
+                        <p class="old_price"> $ <?php echo $row["price"]; ?></p>
+                        <p class="price"> $ <?php echo $row["finalprice"]; ?></p>
                     </div>
 
-                    <div class="box_products" id="heavMetal">
+                <?php
+                    }
+                }else{
+                    echo "Nenhum produto cadastrado!";
+                }
+                ?>
+
+
+                    
+
+                    <!-- <div class="box_products" id="heavMetal">
                     <img src="assets/cd-dr-sin-alive.jpg" width="182px" onclick="when_zoom(this)">
                         <br>
                         <p>dr sin - alive</p>
@@ -127,7 +192,7 @@
                         </div>
                     
                     <div class="box_products" id="hardRock">
-                        <img src="/assets/aerosmith -the millennium collection.jpg" width="182px" onclick="when_zoom(this)">
+                        <img src="/assets/aerosmith - the millennium collection.jpg" width="182px" onclick="when_zoom(this)">
                         <br>
                         <p>Aerosmith - The millennium collection</p>
                         <hr>
@@ -171,7 +236,7 @@
                         <hr>
                         <p class="old_price">$ 18.00</p>
                         <p class="price">16.00</p>
-                        </div>
+                        </div> -->
 
                     </div>             
                 </div>
