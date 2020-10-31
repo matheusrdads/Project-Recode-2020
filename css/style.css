@@ -7,27 +7,19 @@ body{
     background-size: cover;
     color: seashell;
 }
-nav{
-    --margin: 0;
-   --padding: 0;
 
-}
 .menu{
     width: 100%;
     height: 50px;
-    --background-color: red;
     font-family: 'Arial';
     font-size: 20px;
-    
 }
 
 #logo{
-    --background-color: yellow;
     padding: 10px;
     margin: 0px;
     border: 0px;
-    border-radius: 59px;
-    
+    border-radius: 59px; 
 }
 
 #logo img{
@@ -39,7 +31,6 @@ nav{
     align-items: center;
     display: flex;
     float: right;
-    --background-color: blue;
     width: 300px;
     height: 30px;
     padding-top: 11px;
@@ -51,7 +42,6 @@ nav{
 }
 
 .menu ul{
-    --display: flex;
     list-style: none;
     position: relative;
     margin: 0;
@@ -67,9 +57,7 @@ nav{
     padding: 15px;
     display: block;
     text-decoration: none;
-    --align-items: center;
     color: whitesmoke;
-    --background-color: rgb(139, 139, 101);
 }
 
 .menu ul ul{
@@ -92,12 +80,10 @@ nav{
 .menu ul ul li a{
     color: rgb(241, 234, 241);
     background-color: rgb(8, 8, 8);
-    --border-radius: 50px;
 } 
 
 .menu input{
     text-align: center;
-    
 }
 
 .container{
@@ -110,10 +96,10 @@ nav{
     overflow: hidden;
     float: left;
     width: 300;
-    height: 370px;
+    height: 900px;
     padding: 0px;
     margin: 0px;
-    --background-color: rgb(189, 189, 148);
+    cursor: pointer;
 }
 
 .categories ul{
@@ -128,7 +114,6 @@ nav{
     width: 160px;
     font-weight: 500;
     color: rgb(231, 164, 20);
-
 }
 
 .categories a{
@@ -143,7 +128,6 @@ nav{
 
 .box_products{
     display: inline-block;
-    /* width: 24%; */
     width: 303px;
     height: 261px;
     margin: 2px;
@@ -155,20 +139,8 @@ nav{
     padding-bottom: 5px;
     padding-right: 5px;
     border-radius: 15px;
+    cursor: zoom-in;
 }
-
-.box_products img:hover {
-
-    border-radius: 20px;
-    background-color: black;
-}
-
-/* .box_products:hover {
-    background-color: rgba(245, 245, 245, 0.52);
-    font-size: 17px;
-    border-radius: 20px;
-} */
-
 
 .old_price{
     text-decoration: line-through;

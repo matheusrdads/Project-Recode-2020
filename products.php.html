@@ -43,26 +43,26 @@
     <div class="categories">
         <h3>Categories</h3>
         <ul>
-            <li onclick="show_allCategories()">All(12)</li>
-            <li onclick="show_categories('heavMetal')">Heavy Metal(3)</li>
-            <li onclick="show_categories('blackMetal')">Black Metal(1)</li></a>
-            <li onclick="show_categories('trashMetal')">Thrash Metal(4)</li></a>
-            <li onclick="show_categories('progressiveRock')">Progressive Rock(1)</li></a>
-            <li onclick="show_categories('folkMetal')">Folk Metal (1)</li></a>
-            <li onclick="show_categories('hardRock')">Hard Rock (2)</li></a>
-            <a href="views/releases.html" alt="releases"></a><li>Releases</li></a>
-            <a href="views/promotions.html" alt="promotions"><li>Promotions</li></a>
-            <a href="views/rareRecords.html" alt="rareRecords"><li>Rare Records</li></a>
-            <a href="views/bestSellers.html" alt="bestSellers"><li>Best Sellers</li></a>
-            <a href="views/sellYourVinyls.html" alt="sellYourVinyls"><li>Sell your vinyls</li></a>
-            <a href="views/used.html" alt="used"><li>Used</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_allCategories()">All(12)</li>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('heavMetal')">Heavy Metal(3)</li>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('blackMetal')">Black Metal(1)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('trashMetal')">Thrash Metal(4)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('progressiveRock')">Progressive Rock(1)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('folkMetal')">Folk Metal (1)</li></a>
+            <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('hardRock')">Hard Rock (2)</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/releases.html" alt="releases"></a><li>Releases</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/promotions.html" alt="promotions"><li>Promotions</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/rareRecords.html" alt="rareRecords"><li>Rare Records</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/bestSellers.html" alt="bestSellers"><li>Best Sellers</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/sellYourVinyls.html" alt="sellYourVinyls"><li>Sell your vinyls</li></a>
+            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/used.html" alt="used"><li>Used</li></a>
         <ul>
     </div>
 
     <div class="products">
         
                     <div class="box_products" id="trashMetal">
-                    <img src="./assets/destuction.jpg" width="182px" onclick="when_zoom(this)" >
+                    <img src="./assets/destuction.jpg" width="182px" onclick="when_zoom(this)">
                         <br>
                         <p>Destruction - Born To Thrash - Live</p>
                         <hr>
@@ -127,7 +127,7 @@
                         </div>
                     
                     <div class="box_products" id="hardRock">
-                        <img src="/assets/aerosmith -the millennium collection.jpg" width="182px" onclick="when_zoom(this)">
+                        <img src="/assets/aerosmith - the millennium collection.jpg" width="182px" onclick="when_zoom(this)">
                         <br>
                         <p>Aerosmith - The millennium collection</p>
                         <hr>
