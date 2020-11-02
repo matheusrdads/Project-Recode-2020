@@ -1,1 +1,0 @@
-productSELECT * FROM fsmusic.pedidos;
