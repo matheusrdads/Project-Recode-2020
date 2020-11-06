@@ -5,39 +5,16 @@ $password = "";
 $dbname = "recodepro";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+// $conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+if (!$conn) {
+  die("Connection failed: " . mysqli_connect_error());
 }
 
-// $sql = "SELECT * FROM products";
-// $result = $conn->query($sql);
-
-// if ($result->num_rows > 0){
-//     while($row = $result->fetch_assoc()) {
-//         echo $row["categories"];
-//     }
-// }else{
-//     echo "Nenhum produto cadastrado!";
-// }
-
-
-
-
-
-// $sql = "SELECT idorders, fullname, productname  FROM orders";
-// $result = $conn->query($sql);
-
-// if ($result->num_rows > 0) {
-//   // output data of each row
-//   while($row = $result->fetch_assoc()) {
-//     echo "id: " . $row["idorders"]. " - Name: " . $row["fullname"]. " - Produtos: " . $row["productname"]. "<br>";
+// if ($conn->connect_error) {
+//     die("Connection failed: " . $conn->connect_error());
 //   }
-// } else {
-//   echo "0 results";
-// }
-// $conn->close();
 
     ?>
 
@@ -48,33 +25,11 @@ if ($conn->connect_error) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Full Stack Music</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
     <script src="javaScript/functions.js"></script>
 </head>
 <body>
-<!-- <nav class="menu">
-    <ul>
-        <li><a id="logo" href="./index.html"><img src="./assets/images.jfif" alt="Full Stack Music"></a></li>
-        <li><a href="products.html">Products</a>
-            <ul>
-                <li><a onclick="show_categories('heavMetal')">Heavy Metal</a></li>
-                <li><a onclick="show_categories('blackMetal')">Black Metal</a></li>
-                <li><a onclick="show_categories('trashMetal')">Thrash Metal</a></li>
-                <li><a onclick="show_categories('progressiveRock')">Progressive Rock</a></li>
-                <li><a onclick="show_categories('folkMetal')">Folk metal</a></li>
-                <li><a onclick="show_categories('hardRock')">Hard Rock</a></li>
-                <li><a href="views/releases.html" alt="releases">Releases</a></li>
-                <li><a href="views/promotions.html" alt="promotions">Promotions</a></li>
-                <li><a href="views/rareRecords.html" alt="rareRecords">Rare Records</a></li>
-                <li><a href="views/bestSellers.html" alt="bestSellers">Best Sellers</a></li>
-                <li><a href="views/sellYourVinyls.html" alt="sellYourVinyls">Sell your vinyls</a></li>
-                <li><a href="views/used.html" alt="used">Used</a></li>
-            </ul>
-        </li>
-        <li><a href="stores.html">Stores</a></li>
-        <li> <a href="contact.html">Contact</a></li>
-        <div class="search"><input  placeholder="type your search"></input> <a><img src="./assets/search-icon.png" alt="search"></a></div>
-    </ul>
-</nav> -->
 
     <?php 
         include_once('menu.html');
@@ -84,9 +39,10 @@ if ($conn->connect_error) {
         <h3>Products</h3>
     </header>
     <hr>
+    <div class="container">    
     <section>
-    <div class="container">
-    <div class="categories">
+   
+    <div class="sidebar-brand text-white">
         <h3>Categories</h3>
         <ul>
             <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_allCategories()">All(12)</li>
@@ -96,12 +52,6 @@ if ($conn->connect_error) {
             <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('progressiveRock')">Progressive Rock(1)</li></a>
             <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('folkMetal')">Folk Metal (1)</li></a>
             <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('hardRock')">Hard Rock (2)</li></a>
-            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/releases.html" alt="releases"></a><li>Releases</li></a>
-            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/promotions.html" alt="promotions"><li>Promotions</li></a>
-            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/rareRecords.html" alt="rareRecords"><li>Rare Records</li></a>
-            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/bestSellers.html" alt="bestSellers"><li>Best Sellers</li></a>
-            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/sellYourVinyls.html" alt="sellYourVinyls"><li>Sell your vinyls</li></a>
-            <a onmouseover="spotlight(this)" onmouseout="defocus(this)" href="views/used.html" alt="used"><li>Used</li></a>
         <ul>
     </div>
 
@@ -111,18 +61,17 @@ if ($conn->connect_error) {
                 $sql = "SELECT * FROM products";
                 $result = $conn->query($sql);
                 
-                if ($result->num_rows > 0){
-                    while($row = $result->fetch_assoc()) {
-                        
+                if($result->num_rows > 0){
+                    while($rows = $result->fetch_assoc()) {      
                 ?>
 
-                    <div class="box_products" id="<?php echo $row["categories"]; ?>">
-                    <img src="<?php echo $row["images"]; ?>" width="182px" onclick="when_zoom(this)">
+                    <div class="box_products" id="box<?php echo $rows["categories"]; ?>">
+                    <img src="<?php echo $rows["images"]; ?>" width="182px" onclick="when_zoom(this)">
                         <br>
-                        <p><?php echo $row["descripton"]; ?></p>
+                        <p class="description"></p><?php echo $rows["descripton"]; ?></p>
                         <hr>
-                        <p class="old_price"> $ <?php echo $row["price"]; ?></p>
-                        <p class="price"> $ <?php echo $row["finalprice"]; ?></p>
+                        <p class="old_price"> $ <?php echo $rows["price"]; ?></p>
+                        <p class="price"> $ <?php echo $rows["finalprice"]; ?></p>
                     </div>
 
                 <?php
@@ -131,112 +80,6 @@ if ($conn->connect_error) {
                     echo "Nenhum produto cadastrado!";
                 }
                 ?>
-
-
-                    
-
-                    <!-- <div class="box_products" id="heavMetal">
-                    <img src="assets/cd-dr-sin-alive.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>dr sin - alive</p>
-                        <hr>
-                        <p class="old_price">$ 15.00</p>
-                        <p class="price">7.00</p>
-                    </div>
-
-                    <div class="box_products" id="progressiveRock">
-                    <img src="./assets/deep-purple-machine head.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>Dee purple - Machine head</p>
-                        <hr>
-                        <p class="old_price">$ 11.00</p>
-                        <p class="price">8.00</p>
-                    </div>
-
-                    <div class="box_products" id="heavMetal">
-                    <img src="assets/mottor-head-clean your clok.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>Mottor Head - Clean your clok</p>
-                        <hr>
-                        <p class="old_price">$ 10.00</p>
-                        <p class="price">6.99</p>           
-                    </div>
-
-
-
-                    <div class="box_products" id="trashMetal">
-                    <img src="./assets/krisiun-assassination.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>Krisiun - Assassination</p>
-                        <hr>
-                        <p class="old_price">$ 10.00</p>
-                        <p class="price">6.99</p>
-                    </div>
-                    
-                    <div class="box_products" id="folkMetal">
-                    <img src="./assets/tuatha-de-danna-the tribes of witching souls.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>Tuatha de danna - The tribes of witching souls</p>
-                        <hr>
-                        <p class="old_price">$ 15.00</p>
-                        <p class="price">7.00</p>
-                        </div>
-                    
-                    <div class="box_products" id="trashMetal">
-                    <img src="./assets/sepultura-roots.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>Sepultura - Roots</p>
-                        <hr>
-                        <p class="old_price">$ 11.00</p>
-                        <p class="price">8.00</p>
-                        </div>
-                    
-                    <div class="box_products" id="hardRock">
-                        <img src="/assets/aerosmith - the millennium collection.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>Aerosmith - The millennium collection</p>
-                        <hr>
-                        <p class="old_price">$ 10.00</p>
-                        <p class="price">6.99</p>           
-                        </div>
-
-
-
-                    <div class="box_products" id="trashMetal">
-                    <img src="./assets/sepultura-the madiator between Head.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>Sepultura - the madiatror between Head</p>
-                        <hr>
-                        <p class="old_price">$ 10.00</p>
-                        <p class="price">6.99</p>
-                    </div>
-                    
-                    <div class="box_products" id="blackMetal">
-                        <img src="./assets/cradle of filth - cruel and the beast.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>Cradle of filth - Cruel and the beast</p>
-                        <hr>
-                        <p class="old_price">$ 11.00</p>
-                        <p class="price">6.99</p>
-                    </div>
-                    
-                    <div class="box_products" id="hardRock">
-                        <img src="./assets/aerosmith -permanent vacation.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>Aerosmith - Permanent Vacation</p>
-                        <hr>
-                        <p class="old_price">$ 15.00</p>
-                        <p class="price">14.00</p>
-                        </div>
-                    
-                    <div class="box_products" id="heavMetal">
-                        <img src="./assets/iron-maiden-killers.jpg" width="182px" onclick="when_zoom(this)">
-                        <br>
-                        <p>Iron Maiden - killers</p>
-                        <hr>
-                        <p class="old_price">$ 18.00</p>
-                        <p class="price">16.00</p>
-                        </div> -->
 
                     </div>             
                 </div>
@@ -251,5 +94,10 @@ if ($conn->connect_error) {
         <img src="./assets/peyment methods.png" alt="payment methods">
         </p>&copy; Recode Pro turmas 2020</p>
      </footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"crossorigin="anonymous"></script>
+
 </body>
 </html>

@@ -37,9 +37,9 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
         include_once('menu.html');
     ?>
 
-    <h2>Contacts</h2>
+    <h2 style="color:whitesmoke">Contacts</h2>
     <hr>
-    <table border=0 width="100%" cellpadding="20">
+    <table border=0 width="100%" cellpadding="20" class="table_contact">
         <tr>
             <td width="50%" align="center">
                 <img src="./assets/mail.png" alt="">
@@ -65,12 +65,11 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
 
 
     <?php    
-
                         $sql = "SELECT * FROM comments";
                         $result = $conn->query($sql);
                         
                         if ($result->num_rows > 0){
-                            while($row = $result->fetch_assoc()) {
+                            while($rows = $result->fetch_assoc()) {
                                 echo "Date: ", $rows['date'], "<br>";
                                 echo "Nome: ", $rows['nome'], "<br>";
                                 echo "Message: ", $rows['msg'], "<br>";
