@@ -8,33 +8,34 @@ $dbname = "recodepro";
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 // Check connection
 if (!$conn) {
-  die("Connection failed: " . mysqli_connect_error());
+    die("Connection failed: " . mysqli_connect_error());
 }
 
-if(isset($_POST['nome']) && isset($_POST['msg'])){
+if (isset($_POST['nome']) && isset($_POST['msg'])) {
     $nome = $_POST['nome'];
     $msg = $_POST['msg'];
 
     $sql = "insert into comments (nome, msg) values ('$nome','$msg')";
     $result = $conn->query($sql);
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacts - Full Stack Music</title>
 
     <link rel="stylesheet" href="css/style.css">
-    
+
 </head>
+
 <body>
 
-    <?php 
-        include_once('menu.html');
+    <?php
+    include_once('menu.html');
     ?>
 
     <h2 style="color:whitesmoke">Contacts</h2>
@@ -53,7 +54,7 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
         </tr>
     </table>
 
-    <form method="post" action="" >
+    <form method="post" action="">
         Nome:<br>
         <input type="text" name="nome" style="width:500px"><br>
         Mensagem:<br>
@@ -64,27 +65,28 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
     </form>
 
 
-    <?php    
-                        $sql = "SELECT * FROM comments";
-                        $result = $conn->query($sql);
-                        
-                        if ($result->num_rows > 0){
-                            while($rows = $result->fetch_assoc()) {
-                                echo "Date: ", $rows['date'], "<br>";
-                                echo "Nome: ", $rows['nome'], "<br>";
-                                echo "Message: ", $rows['msg'], "<br>";
-                            }
-                        }else{
-                            echo "no comments yet!";
-                        }
+    <?php
+    $sql = "SELECT * FROM comments";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while ($rows = $result->fetch_assoc()) {
+            echo "Date: ", $rows['date'], "<br>";
+            echo "Nome: ", $rows['nome'], "<br>";
+            echo "Message: ", $rows['msg'], "<br>";
+        }
+    } else {
+        echo "no comments yet!";
+    }
     ?>
-    
-    <br><br><br><br>  <br><br><br><br>
+
+    <br><br><br><br> <br><br><br><br>
 
     <footer id="footer">
         <p id="payment_methods"><b> Payment methods: </b></p>
         <img src="./assets/peyment methods.png" alt="payment methods">
         </p>&copy; Recode Pro turmas 2020</p>
-     </footer>
+    </footer>
 </body>
+
 </html>

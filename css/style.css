@@ -1,97 +1,25 @@
-body{
+body {
     font-family: Arial, Helvetica, sans-serif;
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%,rgba(255,255,255,0.7) 90%), 
-    url("../assets/horror-movie-background-png.jpg") repeat 0 0;
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.7) 0%, rgba(255, 255, 255, 0.7) 90%), url("../assets/horror-movie-background-png.jpg") repeat 0 0;
     background-repeat: no-repeat;
-    background-position:center;
+    background-position: center;
     background-size: cover;
     color: seashell;
 }
 
-/* .menu{
-    width: 100%;
-    height: 50px;
-    font-family: 'Arial';
-    font-size: 20px;
-} */
-
-#logo{
+#logo {
     padding: 10px;
     margin: 0px;
     border: 0px;
-    border-radius: 59px; 
-} */
-
-/* #logo img{
-    border-radius: 45px;
+    border-radius: 59px;
 }
 
-.search{
-    position: relative;
-    align-items: center;
-    display: flex;
-    float: right;
-    width: 300px;
-    height: 30px;
-    padding-top: 11px;
-}
-
-.search input{
-    border-radius: 20px;
-    background-color: rgba(245, 245, 245, 0.685);
-} */
-
-/* .menu ul{
-    list-style: none;
-    position: relative;
-    margin: 0;
-    padding: 0;
-}
-
-.menu ul li{
-    width: 150px;
-    float: left;
-}
-
-.menu a {
-    padding: 15px;
-    display: block;
-    text-decoration: none;
-    color: whitesmoke;
-}
-
-.menu ul ul{
-    position: absolute;
-    visibility: hidden;
-}
-
-.menu ul li:hover li{
-    visibility: visible;
-}
-
-.menu a:hover{
-    color:  rgb(139, 139, 101);
-}
-
-.menu ul ul li{
-    float: none;
-}
-
-.menu ul ul li a{
-    color: rgb(241, 234, 241);
-    background-color: rgb(8, 8, 8);
-} 
-
-.menu input{
-    text-align: center;
-} */
-
-.container{
+.container {
     display: flex;
     width: 100%;
 }
 
-.categories{
+.categories {
     position: relative;
     overflow: hidden;
     float: left;
@@ -102,11 +30,11 @@ body{
     cursor: pointer;
 }
 
-.categories ul{
-    padding-inline-start:2px
+.categories ul {
+    padding-inline-start: 2px
 }
 
-.categories ul li{
+.categories ul li {
     color: white;
     text-decoration: none;
     list-style: none;
@@ -116,17 +44,17 @@ body{
     color: rgb(231, 164, 20);
 }
 
-.categories a{
+.categories a {
     text-decoration: none;
 }
 
-.products{
+.products_c {
     width: 100%;
     height: 100%;
     padding: 0%;
 }
 
-.box_products{
+.box_products {
     display: inline-block;
     width: 303px;
     height: 261px;
@@ -135,23 +63,23 @@ body{
     text-align: center;
 }
 
-.box_products img{
+.box_products img {
     padding-bottom: 5px;
     padding-right: 5px;
     border-radius: 15px;
     cursor: zoom-in;
 }
 
-.old_price{
+.old_price {
     text-decoration: line-through;
     color: red;
 }
 
-#footer{
+#footer {
     text-align: center;
 }
 
-#payment_methods{
+#payment_methods {
     color: red;
 }
 
@@ -161,31 +89,31 @@ main {
     height: 100%;
 }
 
-main h1, p{
+main h1, p {
     border: 0px;
     margin: 0px;
     padding: 0px;
 }
 
-.banner{
+.banner {
     display: inline-block;
     font-family: 'Grenze Gotisch', cursive;
     color: rgb(204, 219, 195);
-    width:36%;
+    width: 36%;
     text-align: center;
     padding: 0px;
     margin: 0px;
     border: 0px;
 }
 
-.banner img{
+.banner img {
     width: 70%;
 }
 
-.table_stores{
-    color:whitesmoke;
+.table_stores {
+    color: whitesmoke;
 }
 
-.table_contact{
-    color:whitesmoke;
+.table_contact {
+    color: whitesmoke;
 }
