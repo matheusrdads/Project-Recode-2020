@@ -1,3 +1,18 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "recodepro";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,25 +31,13 @@
 <body>
 
     <?php
-    include_once('menu.html');
+    include_once('menu_simple.html');
     ?>
-    <main>
+    <div class="container-fluid text-center">
         <h1 class="text-white"> Be welcome !</h1>
         <P class="text-white">Here in our store, <em>programmers have discounts</em> on vinyl disks!</P>
-
-        <div class="categories">
-            <h3 class="text-white">Categories</h3>
-            <ul>
-                <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_allCategories()">All(12)</li>
-                <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('heavMetal')">Heavy Metal(3)</li>
-                <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('blackMetal')">Black Metal(1)</li></a>
-                <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('trashMetal')">Thrash Metal(4)</li></a>
-                <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('progressiveRock')">Progressive Rock(1)</li></a>
-                <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('folkMetal')">Folk Metal (1)</li></a>
-                <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('hardRock')">Hard Rock (2)</li></a>
-                <ul>
-        </div>
-        </div>
+        
+        
         <div class="banner">
             <h1>You won't hear anything like that in the next decade</h1>
             <img src="./assets/krisiun-assassination.jpg" alt="featured discs">
@@ -44,7 +47,8 @@
             <h1>don't forget that brutes also love</h1>
             <img src="./assets/aerosmith -permanent vacation.jpg" alt="featured discs">
         </div>
-    </main>
+    </div>
+</div>
 
     <br><br><br><br> <br><br><br><br> <br><br><br>
 
