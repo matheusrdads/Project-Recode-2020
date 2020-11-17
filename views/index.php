@@ -21,9 +21,8 @@ if (!$conn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Stack Music</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300&display=swap" rel="stylesheet">
-    <script src="javaScript/functions.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
 </head>
@@ -31,7 +30,7 @@ if (!$conn) {
 <body>
 
     <?php
-    include_once('menu_simple.html');
+    include_once('./includes/menu_simple.html');
     ?>
     <div class="container-fluid text-center">
         <h1 class="text-white"> Be welcome !</h1>
@@ -40,12 +39,12 @@ if (!$conn) {
         
         <div class="banner">
             <h1>You won't hear anything like that in the next decade</h1>
-            <img src="./assets/krisiun-assassination.jpg" alt="featured discs">
+            <img src=".././assets/krisiun-assassination.jpg" alt="featured discs">
         </div>
 
         <div class="banner">
             <h1>don't forget that brutes also love</h1>
-            <img src="./assets/aerosmith -permanent vacation.jpg" alt="featured discs">
+            <img src=".././assets/aerosmith -permanent vacation.jpg" alt="featured discs">
         </div>
     </div>
 </div>
@@ -54,7 +53,7 @@ if (!$conn) {
 
     <footer class="text-center">
         <p id="payment_methods"><b> Payment methods: </b></p>
-        <img src="./assets/peyment methods.png" alt="payment methods">
+        <img src=".././assets/peyment methods.png" alt="payment methods">
         </p>&copy; Recode Pro turmas 2020</p>
     </footer>
 
