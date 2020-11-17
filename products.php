@@ -60,7 +60,7 @@ if (!$conn) {
                     ?>
 
                             <div class="box_products" id="<?php echo $rows["categories"]; ?>">
-                                <img src="<?php echo $rows["images"]; ?>" width="182px" onclick="when_zoom(this)">
+                                <img src="<?php echo $rows["images"]; ?>" width="182" onclick="when_zoom(this)">
                                 <p class="description"></p><?php echo $rows["descripton"]; ?></p>
                                 <p class="old_price"> $ <?php echo $rows["price"]; ?></p>
                                 <p class="price"> $ <?php echo $rows["finalprice"]; ?></p>
