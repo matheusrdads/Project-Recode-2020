@@ -21,7 +21,7 @@ if (!$conn) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Full Stack Music</title>
 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -53,7 +53,7 @@ if (!$conn) {
 
     <footer class="text-center">
         <p id="payment_methods"><b> Payment methods: </b></p>
-        <img src=".././assets/peyment methods.png" alt="payment methods">
+        <img src="./assets/peyment methods.png" alt="payment methods">
         </p>&copy; Recode Pro turmas 2020</p>
     </footer>
 

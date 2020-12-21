@@ -19,10 +19,10 @@ if (!$conn) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products - Full Stack Music</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <script src="../javaScript/functions.js"></script>
+    <script src="./javaScript/functions.js"></script>
 </head>
 
 <body>
@@ -52,7 +52,7 @@ if (!$conn) {
             <div class="col-sm-9">
                 <div class="products_c">
                     <?php
-                    $sql = "SELECT * FROM products";
+                    $sql = "SELECT * FROM products";    
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -80,7 +80,7 @@ if (!$conn) {
 
         <footer id="footer">
             <p id="payment_methods"><b> Payment methods: </b></p>
-            <img src=".././assets/peyment methods.png" alt="payment methods">
+            <img src="./assets/peyment methods.png" alt="payment methods">
             </p>&copy; Recode Pro turmas 2020</p>
         </footer>
     </div>

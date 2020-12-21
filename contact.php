@@ -27,7 +27,7 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contacts - Full Stack Music</title>
 
-    <link rel="stylesheet" href=".././css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     
@@ -84,7 +84,7 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
 
     <footer id="footer">
         <p id="payment_methods"><b> Payment methods: </b></p>
-        <img src=".././assets/peyment methods.png" alt="payment methods">
+        <img src="./assets/peyment methods.png" alt="payment methods">
         </p>&copy; Recode Pro turmas 2020</p>
      </footer>
 </body>

@@ -2,9 +2,9 @@ function show_categories(categories) {
     let elements = document.getElementsByClassName('box_products');
     for (var i = 0; i < elements.length; i++) {
         if (categories == elements[i].id)
-            elements[i].style = "width:303";
+            elements[i].style = "display:inline-block";
         else
-            elements[i].style = "width:400";
+            elements[i].style = "display:none";
     }
 }
 
