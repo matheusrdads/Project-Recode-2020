@@ -39,12 +39,12 @@ if (!$conn) {
         
         <div class="banner">
             <h1>You won't hear anything like that in the next decade</h1>
-            <img src=".././assets/krisiun-assassination.jpg" alt="featured discs">
+            <img src="./assets/krisiun.jpg" alt="featured discs">
         </div>
 
         <div class="banner">
             <h1>don't forget that brutes also love</h1>
-            <img src=".././assets/aerosmith -permanent vacation.jpg" alt="featured discs">
+            <img src="./assets/aerosmith2.jpg" alt="featured discs">
         </div>
     </div>
 </div>

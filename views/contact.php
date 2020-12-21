@@ -43,12 +43,12 @@ if(isset($_POST['nome']) && isset($_POST['msg'])){
     <table border=0 width="100%" cellpadding="20" class="table_contact">
         <tr>
             <td width="50%" align="center">
-                <img src=".././assets/mail.png" alt="">
+                <img src="./assets/mail.png" alt="">
                 <font face="Arial" size="4">contact@fullstackmusic.com</font>
             </td>
 
             <td width="50%" align="center">
-                <img src=".././assets/whatsapp.png" alt="">
+                <img src="./assets/whatsapp.png" alt="">
                 <font face="Arial" size="4">+1 876-999-9999</font>
             </td>
         </tr>
