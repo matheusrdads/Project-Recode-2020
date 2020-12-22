@@ -22,10 +22,10 @@ let when_zoom = (images) => {
         images.width = 364;
 }
 
-function spotlight(li) {
+function spotlight() {
     li.style = "font-size:20px";
 }
 
-function defocus(li) {
+function defocus() {
     li.style = "font-size:16px";
 }

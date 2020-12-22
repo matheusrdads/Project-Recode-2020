@@ -36,23 +36,23 @@ if (!$conn) {
     <div class="container-fluid">
 
         <div class="row text-white">
-            <div class="col-sm3">
+            <div class="col-sm3 categories">
                 <h3>Categories</h3>
                 <ul>
                     <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_allCategories()">All(12)</li>
                     <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('heavymetal')">Heavy Metal(3)</li>
-                    <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('blackmetal')">Black Metal(1)</li></a>
-                    <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('thrashmetal')">Thrash Metal(4)</li></a>
-                    <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('progressivemetal')">Progressive Rock(1)</li></a>
-                    <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('folkmetal')">Folk Metal (1)</li></a>
-                    <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('hardrock')">Hard Rock (2)</li></a>
+                    <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('blackmetal')">Black Metal(1)</li>
+                    <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('thrashmetal')">Thrash Metal(4)</li>
+                    <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('progressivemetal')">Progressive Rock(1)</li>
+                    <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('folkmetal')">Folk Metal (1)</li>
+                    <li onmouseover="spotlight(this)" onmouseout="defocus(this)" onclick="show_categories('hardrock')">Hard Rock (2)</li>
                     <ul>
             </div>
 
             <div class="col-sm-9">
                 <div class="products_c">
                     <?php
-                    $sql = "SELECT * FROM products";    
+                    $sql = "SELECT * FROM products";
                     $result = $conn->query($sql);
 
                     if ($result->num_rows > 0) {
@@ -76,18 +76,13 @@ if (!$conn) {
                 </div>
             </div>
         </div>
-        <br><br><br><br> <br><br><br><br> <br><br><br>
-
-        <footer id="footer">
-            <p id="payment_methods"><b> Payment methods: </b></p>
-            <img src="./assets/peyment methods.png" alt="payment methods">
-            </p>&copy; Recode Pro turmas 2020</p>
-        </footer>
-    </div>
-
-
-
-
+        
+        
+    <footer id="footer">
+        <p id="payment_methods"><b> Payment methods: </b></p>
+        <img src="./assets/peyment methods.png" alt="payment methods">
+        </p>&copy; Recode Pro turmas 2020</p>
+     </footer>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
